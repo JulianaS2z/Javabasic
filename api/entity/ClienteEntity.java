@@ -2,63 +2,74 @@ package com.example.api.entity;
 
 import jakarta.persistence.*;
 
+@Entity
+@Table(name = "table_clientes")
 public class ClienteEntity {
 
-    @Entity
-    @Table(name= "tab_clientes")
-    public class ClientEntity {
-        @Id
-        @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-        private Long id;
-        @Column(nullable = false)
-        private String nome;
-        @Column(nullable = false)
-        private String email;
-        @Column(nullable = false)
-        private String telefone;
+    @Column(nullable = false)
+    private String nome;
 
+    @Column(nullable = false)
+    private String email;
 
-        public ClientEntity() {
-        }
+    @Column(nullable = false)
+    private String endereco;
 
-        public ClientEntity(Long id, String nome, String email, String telefone) {
-            this.id = id;
-            this.nome = nome;
-            this.email = email;
-            this.telefone = telefone;
-        }
+    @Column(nullable = false)
+    private String whatssap;
 
-        public Long getId() {
-            return id;
-        }
+    public ClienteEntity() {
+    }
 
-        public void setId(Long id) {
-            this.id = id;
-        }
+    public ClienteEntity(Long id, String nome, String email, String endereco, String whatssap) {
+        this.id = id;
+        this.nome = nome;
+        this.email = email;
+        this.endereco = endereco;
+        this.whatssap = whatssap;
+    }
 
-        public String getNome() {
-            return nome;
-        }
+    public Long getId() {
+        return id;
+    }
 
-        public void setNome(String nome) {
-            this.nome = nome;
-        }
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-        public String getEmail() {
-            return email;
-        }
+    public String getNome() {
+        return nome;
+    }
 
-        public void setEmail(String email) {
-            this.email = email;
-        }
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
 
-        public String getTelefone() {
-            return telefone;
-        }
+    public String getEmail() {
+        return email;
+    }
 
-        public void setTelefone(String telefone) {
-            this.telefone = telefone;
-        }
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
+    }
+
+    public String getWhatssap() {
+        return whatssap;
+    }
+
+    public void setWhatssap(String whatssap) {
+        this.whatssap = whatssap;
     }
 }
