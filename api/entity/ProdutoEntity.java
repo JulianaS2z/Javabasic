@@ -5,13 +5,14 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+
 @Entity
-@Table (name = "tab_clientes")
+@Table(name = "tab_produtos")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+public class ProdutoEntity {
 
-public class ClienteEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -19,8 +20,7 @@ public class ClienteEntity {
     @Column(nullable = false)
     private String nome;
     @Column(nullable = false)
-    private String email;
+    private String preco;
     @Column(nullable = false)
-    private String endereco;
-
+    private String quantidade;
 }
